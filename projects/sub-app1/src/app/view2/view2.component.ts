@@ -22,6 +22,7 @@ export class View2Component implements OnInit {
   }
 
   showRootMessages(): void {
+    // TODO: No funciona!!
     // ensenya les dades del subject del app root
     this.messageService.getMessage().subscribe(dades => {
       if (dades) {
