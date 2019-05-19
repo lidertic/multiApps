@@ -1,6 +1,9 @@
-# About
+# Comunicació Multiaplicacions (en workspace angular 7)
 
 This is a sample project for composing an Angular app with sub applications. [Original tutorial is written by Jeffrey Houser on Medium.](https://medium.com/disney-streaming/combining-multiple-angular-applications-into-a-single-one-e87d530d6527)
+
+A aquest exemple hi hem afegit un servei per poder comunicar APP(arrel) amb les aplicacions afegides a PROJECTS/
+de manera que amb RXJS es comuniquin en una direcció i un altre.
 
 ## Development
 
@@ -10,5 +13,3 @@ The `app` will be available on `http://localhost:4200/` and it will automaticall
 To run the sub app, stay in the root directory and run `ng serve sub-app1` or `ng serve sub-app2`.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
-
-
