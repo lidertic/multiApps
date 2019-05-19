@@ -29,6 +29,7 @@ export class AppComponent implements OnDestroy {
       }
     });
 
+    // TODO: cercar exemples on posen fiter per filtrar tipus de missatges!!
     this.data.currentMessage.subscribe(message => (this.message = message));
   }
 
