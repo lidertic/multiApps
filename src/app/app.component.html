@@ -14,3 +14,7 @@
 <button (click)="reset()">Reset</button>
 
 <div *ngFor="let message of messages" class="alert alert-success">{{message.text}}</div>
+
+<div style="background-color: coral;"> P:) {{message}}<br>
+  <button (click)="newMessage()">New Message from parent to childs</button>
+</div>

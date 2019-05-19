@@ -13,8 +13,12 @@ export class AppComponent implements OnDestroy {
   points = 1;
   messages: any[] = [];
   subscription: Subscription;
+  message: string;
 
-  constructor(private messageService: MessageService) {
+  constructor(
+    private messageService: MessageService,
+    private data: MessageService
+  ) {
     // subscribe to home component messages
     this.subscription = this.messageService.getMessage().subscribe(message => {
       if (message) {
@@ -24,6 +28,8 @@ export class AppComponent implements OnDestroy {
         this.messages = [];
       }
     });
+
+    this.data.currentMessage.subscribe(message => (this.message = message));
   }
 
   plus1() {
@@ -32,6 +38,10 @@ export class AppComponent implements OnDestroy {
 
   reset() {
     this.points = 0;
+  }
+
+  newMessage() {
+    this.data.changeMessage("Hello from From parent to all!!");
   }
 
   ngOnDestroy() {
