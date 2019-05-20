@@ -6,6 +6,15 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'scss/myTheme';
 
+html,
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  //font-family: 'Indie Flower', cursive;
+  font-family: $font-family-sans-serif;
+}
+
 // Navbar ======================================================================
 
 .navbar {
