@@ -22,11 +22,9 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -84,25 +82,19 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.scss"
             ],
             "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+            "assets": ["src/favicon.ico", "src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -128,9 +120,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -154,9 +144,7 @@
               "projects/sub-app1/src/favicon.ico",
               "projects/sub-app1/src/assets"
             ],
-            "styles": [
-              "projects/sub-app1/src/styles.css"
-            ],
+            "styles": ["projects/sub-app1/src/styles.css"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -211,9 +199,7 @@
             "polyfills": "projects/sub-app1/src/polyfills.ts",
             "tsConfig": "projects/sub-app1/tsconfig.spec.json",
             "karmaConfig": "projects/sub-app1/karma.conf.js",
-            "styles": [
-              "projects/sub-app1/src/styles.css"
-            ],
+            "styles": ["projects/sub-app1/src/styles.css"],
             "scripts": [],
             "assets": [
               "projects/sub-app1/src/favicon.ico",
@@ -228,9 +214,7 @@
               "projects/sub-app1/tsconfig.app.json",
               "projects/sub-app1/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -256,9 +240,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "projects/sub-app1-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -282,9 +264,7 @@
               "projects/sub-app2/src/favicon.ico",
               "projects/sub-app2/src/assets"
             ],
-            "styles": [
-              "projects/sub-app2/src/styles.css"
-            ],
+            "styles": ["projects/sub-app2/src/styles.css"],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -339,9 +319,7 @@
             "polyfills": "projects/sub-app2/src/polyfills.ts",
             "tsConfig": "projects/sub-app2/tsconfig.spec.json",
             "karmaConfig": "projects/sub-app2/karma.conf.js",
-            "styles": [
-              "projects/sub-app2/src/styles.css"
-            ],
+            "styles": ["projects/sub-app2/src/styles.css"],
             "scripts": [],
             "assets": [
               "projects/sub-app2/src/favicon.ico",
@@ -356,9 +334,7 @@
               "projects/sub-app2/tsconfig.app.json",
               "projects/sub-app2/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -384,9 +360,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "projects/sub-app2-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

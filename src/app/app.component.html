@@ -1,20 +1,67 @@
 <h1>Navigation Example 1.0</h1>
 <app-nav></app-nav>
-<br /><br>
+<br /><br />
 <router-outlet></router-outlet>
 
-<hr>
+<hr />
 
 <h3 class="app-title">Main App Content</h3>
 <div>
-  Points: <span>{{points}}</span>
+  Points: <span>{{ points }}</span>
 </div>
 
 <button (click)="plus1()">Plus 1</button>
 <button (click)="reset()">Reset</button>
 
-<div *ngFor="let message of messages" class="alert alert-success">{{message.text}}</div>
+<div *ngFor="let message of messages" class="alert alert-success">
+  {{ message.text }}
+</div>
 
-<div style="background-color: coral;"> P:) {{message}}<br>
+<div style="background-color: coral;">
+  P:) {{ message }}<br />
   <button (click)="newMessage()">New Message from parent to childs</button>
 </div>
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+  <div class="row">
+    <div class="col-12 col-md">
+      <img
+        class="mb-2"
+        src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
+        alt=""
+        width="24"
+        height="24"
+      />
+      <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Features</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Cool stuff</a></li>
+        <li><a class="text-muted" href="#">Random feature</a></li>
+        <li><a class="text-muted" href="#">Team feature</a></li>
+        <li><a class="text-muted" href="#">Stuff for developers</a></li>
+        <li><a class="text-muted" href="#">Another one</a></li>
+        <li><a class="text-muted" href="#">Last time</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Resource</a></li>
+        <li><a class="text-muted" href="#">Resource name</a></li>
+        <li><a class="text-muted" href="#">Another resource</a></li>
+        <li><a class="text-muted" href="#">Final resource</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>About</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Team</a></li>
+        <li><a class="text-muted" href="#">Locations</a></li>
+        <li><a class="text-muted" href="#">Privacy</a></li>
+        <li><a class="text-muted" href="#">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
