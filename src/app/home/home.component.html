@@ -1,10 +1,9 @@
 <!-- Begin page content -->
 <main role="main" class="flex-shrink-0">
   <div class="container">
-    <h1 class="mt-5">Sticky footer</h1>
+    <h1 class="mt-5">Home</h1>
     <p class="lead">
-      Pin a footer to the bottom of the viewport in desktop browsers with this
-      custom HTML and CSS.
+      Visualització del missatge actual
     </p>
     <div *ngFor="let message of messages" class="alert alert-success">
       <p class="lead">{{ message.text }}</p>
@@ -15,19 +14,12 @@
         {{ message.tipus }}-{{ message.getObjectAtribut('nom') }}
       </p>
     </div>
-    <p>
-      Use
-      <a href="/docs/4.3/examples/sticky-footer-navbar/"
-        >the sticky footer with a fixed navbar</a
-      >
-      if need be, too.
-    </p>
   </div>
 </main>
 
 <footer class="footer mt-auto py-3">
   <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
+    <span class="text-muted">Botó per llençar missatge desde aquí.</span>
 
     <button class="btn btn-lg btn-primary btn-block" (click)="newMessage()">
       New Message from parent to childs
