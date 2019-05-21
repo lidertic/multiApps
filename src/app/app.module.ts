@@ -15,7 +15,7 @@ import { NavComponent } from './_shared/nav/nav.component';
 import { AuthModule } from './auth/auth.module';
 import { ButtonsModule } from 'ngx-bootstrap';
 import { HomeComponent } from './home/home.component';
-import { SessionService } from './_services/session.service';
+import { CoreModule } from './core/core.module';
 @NgModule({
   declarations: [AppComponent, NavComponent, HomeComponent],
   imports: [
@@ -23,11 +23,12 @@ import { SessionService } from './_services/session.service';
     AppRoutingModule,
     HttpClientModule,
     ButtonsModule,
+    CoreModule,
     App1SharedModule.forRoot(),
     App2SharedModule.forRoot(),
     AuthModule
   ],
-  providers: [SessionService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

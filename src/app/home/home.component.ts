@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MessageService } from '../_services';
 import { Missatge } from '../_services/model/missatges';
+import { AuthService } from '../core/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private messageService: MessageService,
-    private data: MessageService
+    private data: MessageService,
+    private sesio: AuthService
   ) {
     this.subscription = this.messageService.getMessage().subscribe(message => {
       if (message) {
@@ -28,7 +30,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
 
     // TODO: cercar exemples on posen fiter per filtrar tipus de missatges!!
-    this.data.currentMessage.subscribe(message => (this.message = message));
+    this.data.currentMessage.subscribe(message => {
+      this.message = message;
+      if (message.tipus === 'usuari' && message.getObjectAtribut('actiu')) {
+        this.sesio.isLoggedIn = true;
+      } else {
+        this.sesio.isLoggedIn = false;
+      }
+    });
   }
 
   ngOnInit() {}

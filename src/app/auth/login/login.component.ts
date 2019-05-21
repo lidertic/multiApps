@@ -18,6 +18,8 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../core/auth.service';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { MessageService } from 'src/app/_services';
+import { Missatge } from 'src/app/_services/model/missatges';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -30,7 +32,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   error: any;
   mostrarError: boolean = false;
   respostaServeiLogin: boolean = false;
-  private data: Observable<string>;
+  //private data: Observable<string>;
   private fruits: Array<string> = [];
   formLogin: FormGroup;
 
@@ -46,6 +48,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private data: MessageService,
     private loginService: LoginService,
     private authService: AuthService
   ) {
@@ -59,10 +62,14 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onButtonClick(event: Event, username: string, password: string): void {
     console.log(`click-> ${username},${password}`);
-    if (username === '1') {
-      this.router.navigate(['/app1']);
-    } else if (username === '2') {
-      this.router.navigate(['/app2']);
+    if (username === '1' || username === '2') {
+      this.authService.isLoggedIn = true;
+      this.data.changeMessage(new Missatge('usuari', { actiu: true }));
+      if (username === '1') {
+        this.router.navigate(['/app1']);
+      } else if (username === '2') {
+        this.router.navigate(['/app2']);
+      }
     }
   }
 
