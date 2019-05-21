@@ -1,7 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 
-import { MessageService } from './_services/index';
+import { MessageService } from './_services';
 import { Subscription } from 'rxjs';
+import { Missatge } from './_services/model/missatges';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnDestroy {
   points = 1;
   messages: any[] = [];
   subscription: Subscription;
-  message: string;
+  message: Missatge;
 
   constructor(
     private messageService: MessageService,
@@ -42,7 +43,7 @@ export class AppComponent implements OnDestroy {
   }
 
   newMessage() {
-    this.data.changeMessage('Hello from From parent to all!!');
+    this.data.changeMessage(new Missatge('comunicacio', { nom: 'Root' }));
   }
 
   ngOnDestroy() {

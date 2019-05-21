@@ -39,5 +39,8 @@
 </nav>
 
 <app-nav></app-nav>
-<p style="color:green;">app2 view2 works! and {{ message }}</p>
+<p style="color:green;">
+  app2 view2 works! <br />
+  {{ message.tipus }} - {{ message.getObjectAtribut('nom') }}
+</p>
 <button (click)="newMessage()">New Message</button>

@@ -15,24 +15,19 @@ import { NavComponent } from './_shared/nav/nav.component';
 import { AuthModule } from './auth/auth.module';
 import { ButtonsModule } from 'ngx-bootstrap';
 import { HomeComponent } from './home/home.component';
+import { SessionService } from './_services/session.service';
 @NgModule({
-   declarations: [
-      AppComponent,
-      NavComponent,
-      HomeComponent
-   ],
-   imports: [
-      BrowserModule,
-      AppRoutingModule,
-      HttpClientModule,
-      ButtonsModule,
-      App1SharedModule.forRoot(),
-      App2SharedModule.forRoot(),
-      AuthModule
-   ],
-   providers: [],
-   bootstrap: [
-      AppComponent
-   ]
+  declarations: [AppComponent, NavComponent, HomeComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ButtonsModule,
+    App1SharedModule.forRoot(),
+    App2SharedModule.forRoot(),
+    AuthModule
+  ],
+  providers: [SessionService],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

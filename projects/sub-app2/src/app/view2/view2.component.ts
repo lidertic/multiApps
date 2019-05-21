@@ -1,13 +1,14 @@
-import { Component, OnInit } from "@angular/core";
-import { MessageService } from "src/app/_services";
+import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'src/app/_services';
+import { Missatge } from 'src/app/_services/model/missatges';
 
 @Component({
-  selector: "app-view2",
-  templateUrl: "./view2.component.html",
-  styleUrls: ["./view2.component.css"]
+  selector: 'app-view2',
+  templateUrl: './view2.component.html',
+  styleUrls: ['./view2.component.css']
 })
 export class View2Component implements OnInit {
-  message: string;
+  message: Missatge;
 
   constructor(private data: MessageService) {}
 
@@ -16,6 +17,8 @@ export class View2Component implements OnInit {
   }
 
   newMessage() {
-    this.data.changeMessage("Hello from Sibling");
+    this.data.changeMessage(
+      new Missatge('comunicacio', { nom: 'app2 view 2' })
+    );
   }
 }

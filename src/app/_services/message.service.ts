@@ -1,10 +1,13 @@
-import { Injectable } from "@angular/core";
-import { Observable, Subject, BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Observable, Subject, BehaviorSubject } from 'rxjs';
+import { Missatge } from './model/missatges';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class MessageService {
   private subject = new Subject<any>();
-  private messageSource = new BehaviorSubject("default message");
+  private messageSource = new BehaviorSubject<Missatge>(
+    new Missatge('Inicial', null)
+  );
 
   currentMessage = this.messageSource.asObservable();
 
@@ -20,7 +23,7 @@ export class MessageService {
     return this.subject.asObservable();
   }
 
-  changeMessage(message: string) {
+  changeMessage(message: Missatge) {
     this.messageSource.next(message);
   }
 }
