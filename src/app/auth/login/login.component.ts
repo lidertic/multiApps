@@ -62,13 +62,22 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   onButtonClick(event: Event, username: string, password: string): void {
     console.log(`click-> ${username},${password}`);
-    if (username === '1' || username === '2') {
+    if (username === '1' || username === '2' || username === '3') {
       this.authService.isLoggedIn = true;
+      let object = {
+        username: username,
+        actiu: true,
+        tipus: 'usuari',
+        token: 'sdsdasdsdsadsadsadsadsadsadasdsadsadsadasd'
+      };
       this.data.changeMessage(new Missatge('usuari', { actiu: true }));
+      localStorage.setItem('validUserMultiapps', JSON.stringify(object));
       if (username === '1') {
-        this.router.navigate(['/app1']);
+        this.router.navigate(['/home']);
       } else if (username === '2') {
         this.router.navigate(['/app2']);
+      } else if (username === '3') {
+        this.router.navigate(['/app1']);
       }
     }
   }

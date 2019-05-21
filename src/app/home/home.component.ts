@@ -32,11 +32,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     // TODO: cercar exemples on posen fiter per filtrar tipus de missatges!!
     this.data.currentMessage.subscribe(message => {
       this.message = message;
-      if (message.tipus === 'usuari' && message.getObjectAtribut('actiu')) {
-        this.sesio.isLoggedIn = true;
-      } else {
-        this.sesio.isLoggedIn = false;
-      }
+      // if (message.tipus === 'usuari' && message.getObjectAtribut('actiu')) {
+      //   this.sesio.isLoggedIn = true;
+      // } else {
+      //   this.sesio.isLoggedIn = false;
+      // }
     });
   }
 
