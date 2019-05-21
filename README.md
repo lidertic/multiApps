@@ -8,7 +8,7 @@ de manera que amb RXJS es comuniquin en una direcció i un altre.
 ## Development
 
 To run the main (container) application, navigate to the root directory and then run `ng serve`.
-The `app` will be available on `http://localhost:4200/` and it will automatically reload if you change any of the source files.
+The `app` will be available on `http://localhost:4202/` and it will automatically reload if you change any of the source files.
 
 To run the sub app, stay in the root directory and run `ng serve sub-app1` or `ng serve sub-app2`.
 
