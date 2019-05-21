@@ -17,6 +17,7 @@ import {
   FormGroup
 } from '@angular/forms';
 import { AuthService } from '../../core/auth.service';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -56,7 +57,14 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit() {}
 
-  onButtonClick(event: Event, username: string, password: string): void {}
+  onButtonClick(event: Event, username: string, password: string): void {
+    console.log(`click-> ${username},${password}`);
+    if (username === '1') {
+      this.router.navigate(['/app1']);
+    } else if (username === '2') {
+      this.router.navigate(['/app2']);
+    }
+  }
 
   onkeyUp(event: Event, username: string, password: string): void {
     this.onButtonClick(null, username, password);

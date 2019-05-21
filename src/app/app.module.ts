@@ -11,19 +11,28 @@ import {
 // Sub Applications
 import { App1SharedModule } from '../../projects/sub-app1/src/app/app.module';
 import { App2SharedModule } from '../../projects/sub-app2/src/app/app.module';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './_shared/nav/nav.component';
 import { AuthModule } from './auth/auth.module';
+import { ButtonsModule } from 'ngx-bootstrap';
+import { HomeComponent } from './home/home.component';
 @NgModule({
-  declarations: [AppComponent, NavComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    App1SharedModule.forRoot(),
-    App2SharedModule.forRoot(),
-    AuthModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   declarations: [
+      AppComponent,
+      NavComponent,
+      HomeComponent
+   ],
+   imports: [
+      BrowserModule,
+      AppRoutingModule,
+      HttpClientModule,
+      ButtonsModule,
+      App1SharedModule.forRoot(),
+      App2SharedModule.forRoot(),
+      AuthModule
+   ],
+   providers: [],
+   bootstrap: [
+      AppComponent
+   ]
 })
 export class AppModule {}

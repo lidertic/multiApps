@@ -1,0 +1,51 @@
+<!-- <hr />
+<a routerLink="/login"> Login</a>&nbsp;| <a routerLink="/app1"> App 1</a>&nbsp;|
+<a routerLink="/app2"> App 2</a> -->
+
+<!-- <div
+  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow"
+>
+  <h5 class="my-0 mr-md-auto font-weight-normal">MultiApps 1.0</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a routerLink="/login" class="p-2 text-dark">Login</a>
+    <a routerLink="/app1" class="p-2 text-dark">App1</a>
+    <a routerLink="/app2" class="p-2 text-dark">App2</a>
+    <a class="p-2 text-dark">Help</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="#">Sign out</a>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">MultiApps 1.0</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarColor01"
+    aria-controls="navbarColor01"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app1">App1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/app2">App2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+    </ul>
+    <a class="btn btn-primary" href="#">Sign out</a>
+  </div>
+</nav>

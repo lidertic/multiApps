@@ -5,11 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { App1SharedModule } from '../../projects/sub-app1/src/app/app.module';
 import { App2SharedModule } from '../../projects/sub-app2/src/app/app.module';
 import { LoginComponent } from './auth/login/login.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   //{ path: 'login', loadChildren: './auth/auth.module#AuthModule' },
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
   {
     path: 'app1',
     loadChildren: '../../projects/sub-app1/src/app/app.module#App1SharedModule'
