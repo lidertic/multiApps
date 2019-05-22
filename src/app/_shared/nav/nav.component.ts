@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
 import { Missatge } from 'src/app/_services/model/missatges';
 import { MessageService } from 'src/app/_services';
@@ -16,7 +16,7 @@ import {
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
   animations: [
-    trigger('collapseTrigger', [
+    trigger('collapse', [
       state(
         'open',
         style({
@@ -30,11 +30,12 @@ import {
         style({
           opacity: '0',
           display: 'none',
-          transform: 'translate3d(0, -100%, 0)'
+          transform: 'translate3d(0, 0, 0)'
         })
       ),
-      transition('open => closed', [animate('400ms ease-out')]),
-      transition('closed => open', [animate('100ms ease-in')])
+
+      transition('closed => open', [animate('50ms ease-in')]),
+      transition('open => closed', [animate('100ms ease-out')])
       //transition('closed => open', animate('100ms ease-in')),
       //transition('open => closed', animate('400ms ease-out'))
     ])
@@ -45,6 +46,7 @@ export class NavComponent implements OnInit {
   message: Missatge;
   show: boolean = false;
   collapse: string = 'closed';
+  nobar: boolean = false;
 
   constructor(
     private sessio: AuthService,
@@ -76,9 +78,23 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {}
 
-  toggleCollapse() {
+  toggleCollapse(boto: boolean) {
     //this.show = !this.show;
+    if (window.innerWidth <= 991) {
+      this.nobar = true;
+    }
     this.collapse = this.collapse === 'open' ? 'closed' : 'open';
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    //console.log(event.target.innerWidth);
+    if (event.target.innerWidth <= 991) {
+      //console.log('CANVI **************');
+      this.nobar = true;
+    } else if (event.target.innerWidth > 991) {
+      this.nobar = false;
+    }
   }
 
   logout() {
