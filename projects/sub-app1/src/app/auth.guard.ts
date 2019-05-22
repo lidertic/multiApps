@@ -9,7 +9,7 @@ import {
   CanLoad,
   Route
 } from '@angular/router';
-import { AuthService } from '../core/auth.service';
+import { AuthService } from 'src/app/core/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,14 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-    let url: string = state.url;
+    const url: string = state.url;
+
+    // FIXME: Per simular que no pot anar al two
+    if (url === '/app1/two') {
+      this.authService.isLoggedIn = false;
+    } else {
+      this.authService.isLoggedIn = true;
+    }
 
     return this.checkLogin(url);
   }
@@ -59,7 +66,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
     // Navigate to the login page with extras
     //this.router.navigate(['/login'], navigationExtras);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
     return false;
   }
 }
