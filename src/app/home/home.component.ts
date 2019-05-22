@@ -10,6 +10,7 @@ import { AuthService } from '../core/auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+  title = 'Dashboard';
   points = 1;
   messages: any[] = [];
   subscription: Subscription;
