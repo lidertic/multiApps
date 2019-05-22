@@ -29,7 +29,7 @@ export class NavComponent implements OnInit {
       )
       .subscribe(message => {
         this.message = message;
-        let user = JSON.parse(localStorage.getItem('validUserMultiapps'));
+        const user = JSON.parse(localStorage.getItem('validUserMultiapps'));
         if (user) {
           this._sesio = true;
         } else {

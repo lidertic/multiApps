@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         tipus: 'usuari',
         token: 'sdsdasdsdsadsadsadsadsadsadasdsadsadsadasd'
       };
-      this.data.changeMessage(new Missatge('usuari', { actiu: true }));
+      this.data.changeMessage(new Missatge('usuari', object));
       localStorage.setItem('validUserMultiapps', JSON.stringify(object));
       if (username === '1') {
         this.router.navigate(['/home']);
