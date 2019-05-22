@@ -17,6 +17,15 @@ body {
   font-family: $font-family-sans-serif;
 }
 
+// Cursor
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.exit {
+  color: $orange !important;
+}
 // Navbar ======================================================================
 
 .navbar {

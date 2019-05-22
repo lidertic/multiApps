@@ -79,8 +79,11 @@ export class NavComponent implements OnInit {
   ngOnInit() {}
 
   toggleCollapse(boto: boolean) {
-    //this.show = !this.show;
-    if (window.innerWidth <= 991) {
+    const width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    if (width <= 991) {
       this.nobar = true;
     }
     this.collapse = this.collapse === 'open' ? 'closed' : 'open';
