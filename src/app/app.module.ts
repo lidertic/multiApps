@@ -16,10 +16,12 @@ import { AuthModule } from './auth/auth.module';
 import { ButtonsModule } from 'ngx-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent, NavComponent, HomeComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     ButtonsModule,

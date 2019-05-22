@@ -16,7 +16,7 @@ import {
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
   animations: [
-    trigger('collapse', [
+    trigger('collapseTrigger', [
       state(
         'open',
         style({
@@ -33,8 +33,10 @@ import {
           transform: 'translate3d(0, -100%, 0)'
         })
       ),
-      transition('closed => open', animate('200ms ease-in')),
-      transition('open => closed', animate('100ms ease-out'))
+      transition('open => closed', [animate('400ms ease-out')]),
+      transition('closed => open', [animate('100ms ease-in')])
+      //transition('closed => open', animate('100ms ease-in')),
+      //transition('open => closed', animate('400ms ease-out'))
     ])
   ]
 })
@@ -42,6 +44,7 @@ export class NavComponent implements OnInit {
   _sesio: boolean;
   message: Missatge;
   show: boolean = false;
+  collapse: string = 'closed';
 
   constructor(
     private sessio: AuthService,
@@ -74,7 +77,8 @@ export class NavComponent implements OnInit {
   ngOnInit() {}
 
   toggleCollapse() {
-    this.show = !this.show;
+    //this.show = !this.show;
+    this.collapse = this.collapse === 'open' ? 'closed' : 'open';
   }
 
   logout() {

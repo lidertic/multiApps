@@ -13,16 +13,26 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" [class.show]="show" id="navbarColor01">
+  <div
+    class="collapse navbar-collapse"
+    [@collapseTrigger]="collapse"
+    id="navbarColor01"
+  >
     <ul class="navbar-nav mr-auto" *ngIf="_sesio">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/home">Home </a>
+        <a class="nav-link" (click)="toggleCollapse()" routerLink="/home"
+          >Home
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/app1">App1</a>
+        <a class="nav-link" (click)="toggleCollapse()" routerLink="/app1"
+          >App1</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/app2">App2</a>
+        <a class="nav-link" (click)="toggleCollapse()" routerLink="/app2"
+          >App2</a
+        >
       </li>
     </ul>
     <a *ngIf="_sesio" class="btn btn-primary" (click)="logout()">Sign out</a>
